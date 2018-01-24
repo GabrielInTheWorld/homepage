@@ -13,7 +13,7 @@ app.get("/api/passwords", (req, res) => {
 
     res.json(passwords)
 
-    console.log(`Sent ${count} passwords.`)
+    console.log(`Sent ${passwords} passwords.`)
 })
 
 app.get("*", (req, res) => {
