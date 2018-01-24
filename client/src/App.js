@@ -13,12 +13,16 @@ class App extends Component {
 
     getPasswords = () => {
         fetch('/api/passwords')
-            .then(res => res.json)
-            .then(passwords => this.setState({passwords}))
+            .then(res => res.json())
+            .then(passwords => {
+                console.log("Got passwords: ", passwords)
+                this.setState({passwords})
+            })
     }
 
     render() {
-      const passwords = this.state
+        const passwords = this.state.passwords
+        console.log("passwords: ", passwords)
 
     return (
       <div className="App">
@@ -42,7 +46,7 @@ class App extends Component {
           ) : (
                 <div>
                     <h1>No passwords :(</h1>
-                    <button className="more" onClick={this.getPasswords}>Try again?</button>
+                    <button className="more" onClick={() => this.getPasswords()}>Try again?</button>
                 </div>
               )}
       </div>
