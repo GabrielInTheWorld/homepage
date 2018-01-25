@@ -1,26 +1,45 @@
 const express = require("express")
 const path = require("path")
-const generatePassword = require("password-generator")
+const socketIO = require("socket.io")
+const p2p = require('socket.io-p2p-server').Server
 
 const app = express()
 
+const user = {
+    name: "gabo_the_legend",
+    password: "PrettyLittleLiars22"
+}
+
+const port = process.env.PORT || 5000
+const server = app.listen(port)
+
 app.use(express.static(path.join(__dirname, "client/build")))
-
-app.get("/api/passwords", (req, res) => {
-    const count = 5
-
-    const passwords = Array.from(Array(count).keys()).map(i => generatePassword(12, false))
-
-    res.json(passwords)
-
-    console.log(`Sent ${passwords} passwords.`)
-})
 
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname + "/client/build/index.html"))
 })
 
-const port = process.env.PORT || 5000
-app.listen(port)
+let io = socketIO(server)
+io.use(p2p)
+
+io.on('connection', (socket) => {
+    socket.on("peer-msg", (data) => {
+        console.log("received message from peer", data)
+        socket.broadcast.emit("peer-msg", data)
+    })
+
+    socket.on('peer-obj', (data) => {
+        console.log("got peer-obj: ", data)
+    })
+
+    socket.on('peer-msg', (data) => {
+        console.log("got message: ", data)
+        socket.broadcast.emit("peer-msg", data)
+    })
+
+    socket.on("stream", (data) => {
+        console.log("got stream")
+    })
+})
 
 console.log(`Server is running on ${port}`)

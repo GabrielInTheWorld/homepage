@@ -24,6 +24,9 @@
     "express": "^4.16.2",
     "grunt": "^1.0.1",
     "password-generator": "^2.2.0",
+    "serve-favicon": "^2.4.5",
+    "socket.io": "^2.0.4",
+    "socket.io-p2p-server": "^1.2.0",
     "typescript": "^2.6.2"
   }
 }
