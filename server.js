@@ -23,6 +23,8 @@ let io = socketIO(server)
 io.use(p2p)
 
 io.on('connection', (socket) => {
+    console.log("client connected.")
+
     socket.on("peer-msg", (data) => {
         console.log("received message from peer", data)
         socket.broadcast.emit("peer-msg", data)
@@ -39,6 +41,10 @@ io.on('connection', (socket) => {
 
     socket.on("stream", (data) => {
         console.log("got stream")
+    })
+
+    socket.on("disconnect", () => {
+        console.log("client disconnected.")
     })
 })
 

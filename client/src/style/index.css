@@ -21,7 +21,7 @@ body {
     color: #ffffff;
 }
 
-#footer > a{
+.foot-link{
     color: #FFF;
     font-size: 10px;
 }

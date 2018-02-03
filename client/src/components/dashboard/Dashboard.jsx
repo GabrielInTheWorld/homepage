@@ -1,13 +1,24 @@
 import React, {Component} from 'react'
 import P2P from 'socket.io-p2p'
 import io from 'socket.io-client'
+import {connect} from 'react-redux'
 
 import {FormGroup, ControlLabel, FormControl, Button} from 'react-bootstrap'
+
+import ChatBox from './components/ChatBox'
+
+import {addUser, createSocket} from "./store/actions/index"
 
 import '../../style/dashboard.css'
 
 let socket
 let p2p
+
+
+/**
+ * TODO: change the streaming way to p2p (also with chatting)
+ * TODO: create the p2p-component in this component and set it into the redux-store
+ */
 
 class Dashboard extends Component{
     constructor(props){
@@ -17,6 +28,10 @@ class Dashboard extends Component{
         }
 
         socket = io()
+        this.props.createSocket(socket)
+
+        // console.log("this socket: ", socket, this.props.socket)
+
         // p2p = new P2P(socket)
         // p2p.on("ready", () => {
         //     p2p.usePeerConnection = true
@@ -70,7 +85,7 @@ class Dashboard extends Component{
     }
 
     componentDidMount(){
-        console.log("componentDidMount")
+        console.log("componentDidMount", this.props.socket)
     }
 
     handleReceiveMessages = () => {
@@ -108,10 +123,27 @@ class Dashboard extends Component{
                     <Button onClick={() => this.sendMessage(this.state.textValue)}>Send</Button>
                 </form>
 
+                <ChatBox/>
                 <video width={640} height={480} id="stream" />
             </div>
         )
     }
 }
 
-export default Dashboard
+const mapStateToProps = (state, ownProps) => {
+    // console.log("mapStateToProps: ", state, ownProps)
+    return{
+        socket: state.socket,
+        members: state.members
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    // console.log("mapDispatchToProps: ", dispatch)
+    return{
+        createSocket: socket => dispatch(createSocket(socket)),
+        addUser: user => dispatch(addUser(user))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard)
