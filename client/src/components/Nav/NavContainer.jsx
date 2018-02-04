@@ -23,6 +23,7 @@ export default class NavContainer extends Component{
             position: "fixed",
             height: "100%",
             backgroundColor: "#2d2d2d",
+            boxShadow: "0px 1px 7px 0px rgba(0, 0, 0, 0.2)",
             width: "200px",
             zIndex: -5,
             top: 0,

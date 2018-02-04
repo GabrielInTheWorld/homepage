@@ -13,12 +13,16 @@ body {
     height: 6.8vh;
 }
 
+/* TODO: add box-shadow to the footer at the top */
 #footer{
-    background: linear-gradient(#808080, black);
+    background-color: #2d3d52;
     height: 5.2vh;
     text-align: center;
     vertical-align: middle;
     color: #ffffff;
+    -webkit-box-shadow: 1px 0px 7px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 1px 0px 7px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 0px 7px 0px rgba(0, 0, 0, 0.2);
 }
 
 .foot-link{

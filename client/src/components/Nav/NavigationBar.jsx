@@ -18,6 +18,7 @@ class NavigationBar extends React.Component{
             top: 0,
             left: 0,
             backgroundColor: "#2d2d2d",
+            boxShadow: "0px 1px 7px 0px rgba(0, 0, 0, 0.2)",
             overflowX: "hidden",
             paddingTop: 20
         }

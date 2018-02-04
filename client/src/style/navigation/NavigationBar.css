@@ -21,7 +21,7 @@
 .Nav:hover, .Nav:focus{
     text-decoration: none;
     color: #FFFFFF;
-    background-color: #AAAAAA;
+    background-color: #666;
     top: -2px;
 }
 
