@@ -12,7 +12,7 @@ export default class Nav extends Component{
 
     components = () => {
         let pStyle = {
-            margin: 0,
+            // margin: 0,
             display: "inline",
             verticalAlign: "middle",
             lineHeight: "32px"

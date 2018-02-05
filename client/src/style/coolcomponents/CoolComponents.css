@@ -1,7 +1,7 @@
 .CoolButton{
     padding: 0.8em 1.7em;
     color: #FFFFFF;
-    width: 100px;
+    /*width: 100px;*/
     margin: 5px;
     display: inline-block;
     text-align: center;
@@ -32,6 +32,10 @@
 
 .blue:hover{
     background-color: #000066;
+}
+
+.white{
+    color: #000 !important;
 }
 
 .arrow{
