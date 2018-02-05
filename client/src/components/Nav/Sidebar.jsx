@@ -23,7 +23,7 @@ export default class Sidebar extends Component{
             width: 200,
             height: "100%",
             zIndex: -10,
-            padding: "20px",
+            paddingTop: "20px",
             backgroundColor: "#404040",
             top: "0",
             left: "0",

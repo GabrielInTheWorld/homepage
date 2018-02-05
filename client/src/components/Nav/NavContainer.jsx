@@ -12,6 +12,7 @@ import {Arrow} from '../CoolComponents'
 
 // import the css
 import '../../style/navigation/NavigationBar.css'
+import NavIcon from "./NavIcon";
 
 export default class NavContainer extends Component{
     componentDidMount(){
@@ -43,6 +44,7 @@ export default class NavContainer extends Component{
                     id={this.props.id}
                     onMouseOver={this.onMouseOver}
                     onMouseLeave={this.onMouseLeave}>
+                    <NavIcon image={this.props.icon} />
                     <p style={pStyle}>{this.props.text}</p>
                     <Arrow site="right"/>
                     </div>
