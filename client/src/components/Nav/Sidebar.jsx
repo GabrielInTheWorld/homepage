@@ -6,7 +6,6 @@ import '../../style/navigation/NavigationBar.css'
 export default class Sidebar extends Component{
 
     componentDidMount(){
-        console.log("sidebar.props:", this.props)
     }
 
     onMouseOver = (e) => {

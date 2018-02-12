@@ -4,12 +4,12 @@ import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 // import custom components
 import App from '../App'
-// import NavBar from '../components/NavBar'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import Dummy from '../components/Dummy'
 import Dashboard from '../components/dashboard/Dashboard'
 import configureStore from '../components/dashboard/store/ConfigureStore'
+import Home from "../components/Home";
 
 const site = {
     marginLeft: "200px"
@@ -36,7 +36,7 @@ const Root = () => (
                     <Route path="/thegame" />
                     <Route path="/forum" />
                     <Route path="/blog" />
-                    <Route path="/home" />
+                    <Route path="/home" component={Home} />
                 </div>
                 <Footer/>
             </div>

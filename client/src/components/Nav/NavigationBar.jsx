@@ -6,7 +6,6 @@ import '../../style/navigation/NavigationBar.css'
 
 class NavigationBar extends React.Component{
     componentDidMount(){
-        console.log("props:", this.props.children)
     }
 
     render(){

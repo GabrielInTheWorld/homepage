@@ -22,7 +22,6 @@ class Navigation extends Component{
     }
 
     render(){
-        console.log("image: ", controller)
         return(
             <NavigationBar>
                 <Nav id={this.getId()} to="/" text="Gabo-The-Legend" icon={favicon} />

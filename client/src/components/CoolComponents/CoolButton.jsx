@@ -3,11 +3,11 @@ import PropTypes from 'prop-types'
 
 import '../../style/coolcomponents/CoolComponents.css'
 
-const color = [
-    "white",
-    "red",
-    "darkblue"
-]
+// const color = [
+//     "white",
+//     "red",
+//     "darkblue"
+// ]
 
 export default class CoolButton extends Component{
     state = {
@@ -28,10 +28,14 @@ export default class CoolButton extends Component{
     }
 }
 
+CoolButton.defaultProps = {
+    color: "white"
+}
+
 CoolButton.propTypes = {
     onClick: PropTypes.func,
     text: PropTypes.string.isRequired,
     id: PropTypes.string,
     state: PropTypes.bool,
-    color: PropTypes.string.isRequired,
+    color: PropTypes.string,
 }

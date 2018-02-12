@@ -36,6 +36,7 @@
 
 .white{
     color: #000 !important;
+    background-color: white;
 }
 
 .arrow{
@@ -71,4 +72,75 @@
 .down {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
+}
+
+.cool-input{
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.08);
+    padding: 0.8em 12px;
+    margin: 5px;
+    outline: 0;
+}
+
+.input-tree{
+    /*position: relative;*/
+}
+
+.search-tree-label{
+    background: url("../../res/search.png") center no-repeat;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+}
+
+.parentlist{
+    left: 8px;
+    width: 216px;
+    display: none;
+}
+
+.treelist{
+    position: absolute;
+    list-style: none;
+    background-color: white;
+    padding: 8px 16px;
+}
+
+.treelist > li{
+    padding: 2px 1px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+}
+
+.li-unselected > div{
+    cursor: pointer;
+}
+
+.li-unselected > div.unselected{
+    display: inline-block;
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    vertical-align: middle;
+    marign-right: 10px;
+    transform: rotate(-45deg);
+    transition: transform 0.6s;
+}
+
+.li-unselected > div.selected{
+    display: inline-block;
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    vertical-align: middle;
+    marign-right: 10px;
+    transform: rotate(45deg);
+    transition: transform 0.6s;
+}
+
+.li-unselected > ul{
+    width: 140px;
 }
